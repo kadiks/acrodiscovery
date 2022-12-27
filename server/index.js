@@ -1,7 +1,7 @@
 import Fastify from "fastify";
 import dotenv from "dotenv";
 import fastifyCors from "@fastify/cors";
-import fetchWiki from "api/fetchWiki.js";
+import fetchWiki from "./api/fetchWiki.js";
 
 dotenv.config();
 
@@ -24,9 +24,7 @@ fastify.get("/", async (request, response) => {
 fastify.get(
   "/api/vendors/notion/databases/glossary",
   async (request, response) => {
-    const dictionnary = await fetchWiki();
-
-    return dictionnary;
+    return fetchWiki(request, response);
   }
 );
 

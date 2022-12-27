@@ -1,7 +1,7 @@
 import Fastify from "fastify";
 import dotenv from "dotenv";
 import fastifyCors from "@fastify/cors";
-import fetchWiki from "./src/fetchWiki.js";
+import fetchWiki from "./api/fetchWiki.js";
 
 dotenv.config();
 

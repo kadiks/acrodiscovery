@@ -1,0 +1,22 @@
+.container {
+  margin: 1em 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+button {
+  padding: 8px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+button.current {
+  box-shadow: 0 0 0 2px white, 0 0 0 4px black;
+}

@@ -1,0 +1,15 @@
+{
+  "coverage_file_path": "./coverage/tmp/coverage-82500-1656197971281-4.json",
+  "badges": {
+    "coverage": {
+      "logo": "foo",
+      "color": "bar"
+    },
+    "statements": {
+      "style": "flat",
+      "logo": "kotlin",
+      "logoColor": "white",
+      "color": "blue"
+    }
+  }
+}

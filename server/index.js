@@ -1,6 +1,13 @@
 import Fastify from "fastify";
+import dotenv from "dotenv";
 import fastifyCors from "@fastify/cors";
 import fetchWiki from "./src/fetchWiki.js";
+
+dotenv.config();
+
+const fastify = Fastify({
+  logger: true,
+});
 
 fastify.register(fastifyCors, {
   origin: "*",

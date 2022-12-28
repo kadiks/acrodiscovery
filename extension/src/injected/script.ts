@@ -1,10 +1,8 @@
-// const extractTextFromHTML = require("./extractTextFromHTML");
 import extractTextsFromHTML from "./extractTextsFromHTML";
 
 const highlightWordsInDict = async () => {
-  console.log("#0");
   const fetchWiki = async () => {
-    const url = `http://localhost:3000/api/vendors/notion/databases/glossary`;
+    const url = "PROXY_SERVER_URL";
     const response = await fetch(url);
     // console.log("response", response);
 

@@ -1,6 +1,8 @@
 import path, { resolve } from "path";
-import { defineConfig } from "vite";
+
 import { chromeExtension } from "vite-plugin-chrome-extension";
+import { defineConfig } from "vite";
+import replace from "@rollup/plugin-replace";
 
 export default defineConfig({
   resolve: {
@@ -13,6 +15,17 @@ export default defineConfig({
     rollupOptions: {
       input: "src/manifest.json",
     },
+    outDir:
+      process.env.BUILD_ENV === "development" ? "build/dev" : "build/dist",
   },
-  plugins: [chromeExtension()],
+  plugins: [
+    replace({
+      PROXY_SERVER_URL:
+        process.env.BUILD_ENV === "development"
+          ? "http://localhost:3000/api/vendors/notion/databases/glossary"
+          : "https://acrodiscovery.vercel.app/api/fetchWiki",
+      preventAssignment: true,
+    }),
+    chromeExtension(),
+  ],
 });

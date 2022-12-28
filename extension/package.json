@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "./node_modules/nodemon/bin/nodemon.js --watch src --exec 'npm run build'",
     "build2": "tsc -p tsconfig.json && tsc -p tsconfig-vm.json && vite build",
-    "build": "tsc -p tsconfig.json && vite build",
+    "build:dev": "tsc -p tsconfig.json && BUILD_ENV=development vite build",
+    "build:prod": "tsc -p tsconfig.json && BUILD_ENV=production vite build",
     "preview": "vite preview",
     "test": "vitest",
     "coverage": "vitest run --coverage --reporter=json",
@@ -15,6 +16,7 @@
   "devDependencies": {
     "@babel/preset-typescript": "^7.17.12",
     "@jest/types": "^28.1.1",
+    "@rollup/plugin-replace": "^5.0.2",
     "@tsconfig/node18-strictest-esm": "^1.0.0",
     "@tsconfig/recommended": "^1.0.1",
     "@types/jest": "^28.1.3",
